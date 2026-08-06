@@ -439,3 +439,66 @@ Comparison operators always return true or false.
 | `<`      | Less than        | `5 < 10`    | `true`  |.         |  
 | `>=`     | Greater/equal    | `10 >= 10`  | `true`  |.         | 
 | `<=`     | Less/equal       | `5 <= 10`   | `true`  |.         |
+
+
+**4. JavaScript Logical Operators
+
+Logical operators are used to combine multiple conditions or work with Boolean values.
+
+JavaScript has three main logical operators:
+```
+&&  → AND
+||  → OR
+!   → NOT
+```
+
+
+```
+console.log(true && true);   // true
+console.log(true && false);  // false
+console.log(false && true);  // false
+console.log(false && false); // false
+
+console.log(true || true);   // true
+console.log(true || false);  // true
+console.log(false || true);  // true
+console.log(false || false); // false
+
+console.log(!true);  // false
+console.log(!false); // true
+
+```
+
+**5. Modern Operator**
+1. ?? — Nullish Coalescing Operator
+
+```
+const username = null;
+const result = username ?? "Guest";
+console.log(result); // Guest
+
+const username = undefined;
+console.log(username ?? "Guest"); // Guest
+
+const username = "Rishi";
+console.log(username ?? "Guest"); // Rishi
+
+```
+2. ?. — Optional Chaining Operator
+  ``` 
+const user = {};
+console.log(user.profile.name); //TypeError
+
+const user = {};
+console.log(user.profile?.name); //undefined
+
+const user = {
+  profile: {
+    address: {
+      city: "Mumbai"
+    }
+  }
+};
+console.log(user.profile?.address?.city); //Mumbai
+
+```

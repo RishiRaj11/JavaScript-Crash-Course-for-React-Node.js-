@@ -338,3 +338,104 @@ Reassignment   → Change value
 Redeclaration  → Create again
 Scope          → Where can I access it?
 ```
+
+
+### Tutorial 3: Operators
+here are different types of JavaScript operators:
+
+1. Arithmetic Operators
+2. Assignment Operators
+3. Comparison Operators
+4. Logical Operators
+5. Modern operators:
+
+**1. Arithmetic Operators**
+| Operator | Name           | Example  | Result |
+| -------- | -------------- | -------- | -----: |
+| `+`      | Addition       | `10 + 5` |   `15` |
+| `-`      | Subtraction    | `10 - 5` |    `5` |
+| `*`      | Multiplication | `10 * 5` |   `50` |
+| `/`      | Division       | `10 / 5` |    `2` |
+| `%`      | Modulus        | `10 % 3` |    `1` |
+| `**`     | Exponentiation | `2 ** 3` |    `8` |
+
+```
+let a = 10;
+let b = 3;
+
+console.log(a + b);  // 13
+console.log(a - b);  // 7
+console.log(a * b);  // 30
+console.log(a / b);  // 3.333...
+console.log(a % b);  // 1   The % operator returns the remainder after division.
+const number = 10;
+console.log(number % 2 === 0); // true If the remainder is 0, the number is even.
+
+console.log(a ** b); // 1000
+
+let count = 10;
+count++ //count = count + 1;
+console.log(count); // 11
+
+//Post Increment
+let x = 10;
+console.log(x++); // 10
+console.log(x);   // 11
+
+//Pre Increment
+let x = 10;
+console.log(++x); // 11
+console.log(x);   // 11
+
+
+let count = 10;
+count-- //count=count-1
+console.log(count); // 9
+
+let x = 10;
+console.log(x--); // 10
+console.log(x);   // 9
+
+let x = 10;
+console.log(--x); // 9
+console.log(x);   // 9
+```
+
+**2. Assignment Arithmetic Operators**
+
+```
+let x = 10;
+
+x += 5;  // x = x + 5
+console.log(x); // 15
+
+x -= 3;  // x = x - 3
+console.log(x); // 12
+
+x *= 2;  // x = x * 2
+console.log(x); // 24
+
+x /= 4;  // x = x / 4
+console.log(x); // 6
+
+x %= 4;  // x = x % 4
+console.log(x); // 2
+
+x **= 3; // x = x ** 3
+console.log(x); // 8
+```
+**3. Comparison Operators**
+
+Comparison operators are used to compare two values.
+
+Comparison operators always return true or false.
+| Operator | Meaning          | Example     | Result  | Comments |
+| -------- | ---------------- | ----------- | ------- | -------- |
+| `==`     | Equal            | `5 == "5"`  | `true`  |          |
+| `===`    | Strict equal     | `5 === "5"` | `false` |          |
+| `!=`     | Not equal        | `5 != 10`   | `true`  |.         |
+| `!==`    | Strict not equal | `5 !== "5"` | `true`  |          |
+| `>`      | Greater than     | `10 > 5`    | `true`  |.         |  
+| `<`      | Less than        | `5 < 10`    | `true`  |.         |  
+| `>=`     | Greater/equal    | `10 >= 10`  | `true`  |.         | 
+| `<=`     | Less/equal       | `5 <= 10`   | `true`  |.         |

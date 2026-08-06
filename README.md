@@ -92,3 +92,249 @@ It is written primarily in C++ and is used by:
 The important thing for React and Node.js learners is:
 
 Chrome and Node.js both use V8.
+
+## Tutorial-2: Variables & Data Types
+### Variables
+* Variables = Data Containers
+* JavaScript variables are containers for data.
+* Variables are identified with names called identifiers.
+* JavaScript variables can be declared in 4 ways:
+  
+* Modern JavaScript
+  
+```
+1. Using let
+let x = 5;
+let y = 6;
+let z = x + y;
+2. Using const
+const x = 5;
+const y = 6;
+const z = x + y;
+```
+
+* Older JavaScript
+  
+```
+1. Using var (Not Recommended)
+var x = 5;
+var y = 6;
+var z = x + y;
+Automatically (Not Recommended)
+x = 5;
+y = 6;
+z = x + y;
+```
+
+### Data Types
+> A JavaScript variable can hold 8 types of data.
+
+> 7 Primitive Data Types and 1 Object Data Type.
+
+> The Object data type can hold many different object types.
+<img width="489" height="406" alt="image" src="https://github.com/user-attachments/assets/a2f41ea6-64c9-4725-a1d2-b71abaf8c5bd" />
+
+**Type	Description**
+
+*  **Number**	A number representing a numeric value
+* **Bigint**	A number representing a large integer
+* **String**	A text of characters enclosed in quotes
+* **Boolean**	A data type representing true or false
+* **Undefined**	A variable with no assigned value
+* **Null**	A value representing object absence
+* **Symbol**	A unique primitive identifier
+* **Object**	A collection of key-value pairs of data
+
+```
+// Number
+let length = 16;
+let weight = 7.5;
+
+// BigInt
+let x = 1234567890123456789012345n;
+let y = BigInt(1234567890123456789012345)
+// Strings
+let color = "Yellow";
+let lastName = "Johnson";
+
+// Boolean
+let x = true;
+let y = false;
+
+// Undefined
+let x;
+let y;
+
+// Null
+let x = null;
+let y = null;
+
+// Symbol
+const x = Symbol();
+const y = Symbol();
+
+// Object
+const person = {firstName:"John", lastName:"Doe"};
+
+// Array Object
+const cars = ["Saab", "Volvo", "BMW"];
+
+// Date Object
+const date = new Date("2022-03-25");
+```
+
+There is a operator in javascript to check the data type **typeof**
+```
+typeof "hello" //string
+typeof 10 //number
+typeof true //boolean
+typeof undefined //undefined
+typeof null //Object
+typeof 1234567890123456789012345n; //bigint
+typeof BigInt(1234567890123456789012345) //bigint
+```
+
+**1. The rules for constructing names (identifiers) are:**
+
+* Names can contain letters, digits, underscores, and dollar signs.
+* Names must begin with a letter, a $ sign or an underscore (_).
+* Names are case sensitive (X is different from x).
+* Reserved words (JavaScript keywords) cannot be used as names.
+
+2. Declaring JavaScript Variables
+Creating a variable in JavaScript is called declaring a variable.
+
+You declare a JavaScript variable with the let keyword or the const keyword. 
+```
+let carName;
+```
+
+After the declaration, the variable has no value (technically it is undefined).
+To assign a value to the variable, use the equal sign:
+```
+carName="Volvo"
+```
+
+```
+let carName = "Volvo";
+```
+```
+const carName = "Volvo";
+```
+
+```
+const price1 = 5;
+const price2 = 6;
+let total = price1 + price2;
+```
+The two variables price1 and price2 are declared with the const keyword.
+
+The values of price1 and price2 cannot be changed.
+
+The variable total is declared with the let keyword.
+
+The value of total can be changed.
+```
+var x = 5;
+var y = 6;
+var z = x + y;
+```
+3. Reassignment
+
+```
+let age = 25;
+age = 30; // Reassignment
+console.log(age); // 30
+
+const age = 25;
+age = 30; // ❌ TypeError
+
+val age=25
+age=30 Reassignment
+console.log(age); // 30
+
+```
+4. Redeclaration
+```
+var name = "Rishi";
+var name = "Raj"; // ✅ Redeclaration allowed
+console.log(name); // Raj
+
+let name = "Rishi";
+let name = "Raj"; // ❌ SyntaxError
+
+const name = "Rishi";
+const name = "Raj"; // ❌ SyntaxError
+```
+* let    → declaration + reassignment allowed
+* const  → declaration allowed, reassignment NOT allowed
+* var    → declaration + reassignment allowed
+
+5. Scope(This will discuss after completion)
+Scope determines where a variable can be accessed in your code.
+
+JavaScript has several important types of scope:
+* Global Scope
+* Function Scope
+* Block Scope
+
+** Global Scope **
+
+A variable declared outside functions/blocks is generally in the global scope.
+```
+const name = "Rishi";
+
+function greet() {
+  console.log(name);
+}
+
+greet();
+```
+** Note: ** The function can access the variable because name is available from the outer/global scope.
+
+** Function Scope **
+
+Variables declared with var inside a function are available throughout that function.
+```
+function test() {
+  var message = "Hello";
+
+  console.log(message);
+}
+
+test();
+
+console.log(message); // ❌ ReferenceError
+```
+
+** Block Scope **
+
+let and const are block-scoped.
+
+A block is usually represented by { }.
+```
+if (true) {
+  let message = "Hello";
+  const name = "Rishi";
+
+  console.log(message);
+  console.log(name);
+}
+
+console.log(message); // ❌ ReferenceError
+console.log(name);    // ❌ ReferenceError
+
+
+if (true) {
+  var x = 10;
+}
+
+console.log(x); // 10
+```
+** Note: ** The variables only exist inside the if block if it is declare with let but if it is declare with var it is accessible outside also.
+```
+Declaration    → Create
+Reassignment   → Change value
+Redeclaration  → Create again
+Scope          → Where can I access it?
+```

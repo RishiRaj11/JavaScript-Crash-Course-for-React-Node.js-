@@ -502,3 +502,303 @@ const user = {
 console.log(user.profile?.address?.city); //Mumbai
 
 ```
+
+### Conditions & Loops
+Conditions allow JavaScript to make decisions based on whether something is true or false.
+
+Loops are used when you want to execute the same block of code repeatedly.
+
+* if
+* else
+* else if
+* Nested conditions
+* Ternary operator
+* switch
+* for loop
+* while loop
+* do...while
+* break
+* continue
+* for...of
+* for...in
+
+**1. if**
+```
+const isRaining = true;
+
+if (isRaining) {
+  console.log("Take an umbrella");
+}
+
+const age = 20;
+
+if (age >= 18) {
+  console.log("You are an adult");
+}
+```
+**2. if...else**
+```
+const age = 16;
+
+if (age >= 18) {
+  console.log("You can vote");
+} else {
+  console.log("You cannot vote");
+}
+```
+
+**3. else if**
+```
+const marks = 75;
+
+if (marks >= 90) {
+  console.log("Grade A+");
+} else if (marks >= 80) {
+  console.log("Grade A");
+} else if (marks >= 70) {
+  console.log("Grade B");
+} else if (marks >= 60) {
+  console.log("Grade C");
+} else {
+  console.log("Fail");
+}
+
+
+const age = 25;
+const hasLicense = true;
+
+if (age >= 18 && hasLicense) {
+  console.log("You can drive");
+} else {
+  console.log("You cannot drive");
+}
+
+const isLoggedIn = true;
+const isAdmin = true;
+
+if (isLoggedIn) {
+  if (isAdmin) {
+    console.log("Welcome Admin");
+  }
+}
+```
+**4. Ternary Operator**
+
+The ternary operator is a short way of writing a simple if...else.
+
+>condition ? valueIfTrue : valueIfFalse
+```
+const age = 20;
+
+if (age >= 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}
+
+
+const age = 20;
+const result = age >= 18 ? "Adult" : "Minor";
+console.log(result);
+
+```
+
+**5. switch**
+
+switch is useful when you need to compare one value against multiple possible values.
+
+```
+const day = "Monday";
+
+switch (day) {
+  case "Monday":
+    console.log("Start of the week");
+    break;
+
+  case "Friday":
+    console.log("Almost weekend");
+    break;
+
+  case "Sunday":
+    console.log("Weekend");
+    break;
+
+  default:
+    console.log("Normal day");
+}
+
+```
+
+**6. for Loop**
+
+Loops are used when you want to execute the same block of code repeatedly.
+
+```
+console.log(1);
+console.log(2);
+console.log(3);
+console.log(4);
+console.log(5);
+
+
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+
+```
+**Syntax**
+```
+
+for (initialization; condition; increment){
+// code
+}
+
+```
+Array Example
+```
+const fruits = ["Apple", "Banana", "Mango"];
+
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+```
+**7. while Loop**
+```
+let i = 1;
+
+while (i <= 5) {
+  console.log(i);
+  i++;
+}
+```
+**Note:** Make sure the condition eventually becomes false.
+
+```
+while (true) {
+  console.log("Hello");
+}
+```
+**Note:**This creates an infinite loop.
+
+
+**8. do...while**
+
+do...while executes the code at least once, even if the condition is false.
+
+```
+let i = 10;
+
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+```
+
+
+**9. break**
+
+break immediately stops the loop.
+
+```
+for (let i = 1; i <= 10; i++) {
+  if (i === 5) {
+    break;
+  }
+
+  console.log(i);
+}
+```
+
+**10. continue**
+
+continue skips the current iteration and moves to the next one.
+
+```
+for (let i = 1; i <= 5; i++) {
+  if (i === 3) {
+    continue;
+  }
+
+  console.log(i);
+}
+```
+
+**11. for...of**
+
+for...of is used to iterate over values of an iterable such as an array or string.
+
+```
+const fruits = ["Apple", "Banana", "Mango"];
+
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+
+
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+
+const name = "Rishi";
+for (const char of name) {
+  console.log(char);
+}
+
+```
+
+**12. for...in**
+
+for...in is generally used to iterate over object keys.
+
+```
+const user = {
+  name: "Rishi",
+  age: 25,
+  city: "Mumbai"
+};
+
+for (const key in user) {
+  console.log(key);
+}
+
+
+for (const key in user) {
+  console.log(user[key]);
+}
+
+const fruits = ["Apple", "Banana"];
+
+for (const index in fruits) {
+  console.log(index);
+}
+```
+
+
+
+
+
+```
+CONDITIONS
+
+if          → One condition
+else        → Otherwise
+else if     → Multiple conditions
+ternary     → Short if/else
+switch      → Multiple fixed values
+
+
+LOOPS
+
+for         → Known/repeated iterations
+while       → Repeat while condition is true
+do...while  → Execute at least once
+for...of    → Iterate values
+for...in    → Iterate keys
+
+
+CONTROL
+
+break       → Stop loop
+continue    → Skip current iteration
+
+```

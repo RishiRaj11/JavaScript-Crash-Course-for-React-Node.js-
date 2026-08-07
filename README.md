@@ -523,6 +523,15 @@ Loops are used when you want to execute the same block of code repeatedly.
 * for...in
 
 **1. if**
+
+Syntax
+
+```
+if (condition) {
+  //  block of code to be executed if the condition is true
+}
+```
+
 ```
 const isRaining = true;
 
@@ -537,6 +546,17 @@ if (age >= 18) {
 }
 ```
 **2. if...else**
+
+Syntax
+
+```
+if (condition) {
+  //  block of code to be executed if the condition is true
+} else {
+  //  block of code to be executed if the condition is false
+}
+```
+
 ```
 const age = 16;
 
@@ -548,6 +568,19 @@ if (age >= 18) {
 ```
 
 **3. else if**
+
+Syntax
+
+```
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+
+```
 ```
 const marks = 75;
 
@@ -606,6 +639,20 @@ console.log(result);
 **5. switch**
 
 switch is useful when you need to compare one value against multiple possible values.
+
+Syntax
+```
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+```
 
 ```
 const day = "Monday";

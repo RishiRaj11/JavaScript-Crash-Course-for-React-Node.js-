@@ -503,7 +503,7 @@ console.log(user.profile?.address?.city); //Mumbai
 
 ```
 
-### Conditions & Loops
+###Tutorial-4:  Conditions & Loops
 Conditions allow JavaScript to make decisions based on whether something is true or false.
 
 Loops are used when you want to execute the same block of code repeatedly.
@@ -848,4 +848,182 @@ CONTROL
 break       → Stop loop
 continue    → Skip current iteration
 
+```
+
+### Tutorial-5:Functions
+* Functions are Code Blocks
+* Functions are reusable code blocks designed to perform a particular task.
+
+* Functions are executed when they are called or invoked.
+
+* Functions are fundamental in all programming languages.
+
+* **Why Use Functions?**
+
+* Reuse code (write once, run many times)
+
+* Organize code into smaller parts
+
+* Make code easier to read and maintain
+
+JavaScript Function Syntax
+
+```
+function name( p1, p2, ... ) {
+  // code to be executed
+}
+```
+
+Functions are defined with the function keyword:
+
+* followed by the function name
+* followed by parentheses ( )
+* followed by brackets { }
+  
+The function name follows the naming rules for variables.
+
+Optional parameters are listed inside parentheses: ( p1, p2, ... )
+
+Code to be executed is listed inside curly brackets: { }
+
+Functions can return an optional value back to the caller.
+
+
+* **Parameters** - some values are sent to the function
+* **Arguments** - some values are received by the function
+* **Function Code** - some work is done inside the function
+* **Return Output** - some value is returned from the function
+
+```
+function sayHello() {
+  return "Hello World";
+}
+
+let message = sayHello();
+
+
+function add(a, b) {
+  return a + b;
+}
+
+let sum1 = add(5, 5);
+let sum2 = add(50, 50);
+```
+
+**What is a Function Expression?**
+```
+// Standard Function
+function multiply(a, b) {
+  return a * b;
+}
+
+// Function Expression
+const multiply = function(a, b) {
+  return a * b;
+};
+
+let z = multiply(4, 3);
+```
+After a function expression has been stored in a variable, the variable can be used as a function
+
+### Anonymous Functions
+
+Function expressions are commonly used to create anonymous functions.
+
+The function below is actually function without a name.
+
+```
+// Function Expression
+const multiply = function(a, b) {
+  return a * b;
+};
+```
+
+* Functions stored in variables do not need names.
+
+* The variable name is used to call the function.
+
+** *function expressions can also be a named:**
+
+>const add = function add(a, b) {return a + b;};
+
+* Function expression is stored in a variable, it can be used like a value.
+* This is useful when passing functions to other functions (callbacks).
+
+* A function expression can be assigned to a variable, passed as an argument to another function, or returned from a function.
+
+  >Interview Question: Difference between Function Declarations vs Function Expression
+  >const multiply = function(a, b) {return a * b}
+
+### JavaScript Arrow Functions
+
+Arrow Functions allow a shorter syntax for function expressions.
+
+You can skip the function keyword, the return keyword, and the curly brackets:
+
+>const multiply = function(a, b) {return a * b}
+
+>const multiply = (a, b) => a * b;
+
+If a function has only one parameter, you can omit the parentheses:
+
+* If the function has only one statement that returns a value:
+  
+>const square = x => x * x;
+
+```
+const add = (a, b) => {
+  return a + b;
+};
+```
+**Default Parameters**
+
+```
+function greet(name = "Guest") {
+  console.log(`Hello ${name}`);
+}
+
+greet("Rishi");
+greet();
+```
+
+**Callback Function**
+
+A callback is a function passed to another function as an argument.
+
+```
+function greet(name) {
+  console.log(`Hello ${name}`);
+}
+
+function processUser(callback) {
+  callback("Rishi");
+}
+
+processUser(greet);
+```
+* Callback with Anonymous Function
+
+```
+//example
+```
+
+**Higher-Order Function**
+
+A function that:
+
+accepts another function as an argument, or
+
+returns another function
+
+is called a higher-order function.
+
+```
+function calculate(a, b, operation) {
+  return operation(a, b);
+}
+
+const add = (a, b) => a + b;
+
+console.log(calculate(10, 20, add));
 ```

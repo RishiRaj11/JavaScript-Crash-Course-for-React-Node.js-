@@ -1027,3 +1027,223 @@ const add = (a, b) => a + b;
 
 console.log(calculate(10, 20, add));
 ```
+
+### tutorial 6: Practice 
+
+ * Write a function that takes two numbers and returns their sum
+ ```
+ function addNumbers(a, b) {
+  return a + b;
+}
+
+console.log(addNumbers(10, 20));
+ ```
+ * Write a function that determines whether a number is positive, negative, or zero.
+   
+```
+   function checkNumber(num) {
+  if (num > 0) {
+    return "Positive";
+  } else if (num < 0) {
+    return "Negative";
+  } else {
+    return "Zero";
+  }
+}
+console.log(checkNumber(-10));
+console.log(checkNumber(10));
+console.log(checkNumber(0));
+```
+
+ * Write a function that checks whether a number is even or odd.
+```
+   function checkEvenOdd(num) {
+  if (num % 2 === 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+}
+
+console.log(checkEvenOdd(7));
+console.log(checkEvenOdd(10));
+```
+ * Write a function that returns the larger of two numbers.
+```
+function findLargest(a, b) {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  }
+}
+
+console.log(findLargest(25, 40));
+```
+ * Write a function that returns the sum of numbers from 1 to N.
+```
+   function calculateSum(n) {
+  let sum = 0;
+
+  for (let i = 1; i <= n; i++) {
+    sum = sum + i;
+  }
+
+  return sum;
+}
+
+console.log(calculateSum(5));
+```
+ * Write a function that returns the factorial of a number.
+ ```
+function factorial(n) {
+  let result = 1;
+
+  for (let i = 1; i <= n; i++) {
+    result = result * i;
+  }
+
+  return result;
+}
+
+console.log(factorial(5));
+
+```  
+
+### Tutorial 7: Javascript Array
+
+* An array is a data structure used to store multiple values in a single variable.
+* resizable
+* array are zero indexed
+```
+const fruilts= ["apple","Banana"]
+console.log(fruits[0])
+console.log(fruits[1])
+```
+**1. Creating an Array**
+
+* Array literal
+>let fruits = ["Apple", "Banana", "Mango"];
+
+* Empty array
+>let numbers = [];
+
+* Array Constructor
+>let numbers = new Array(10, 20, 30);
+
+**2. Array properties**
+  * length
+  >fruits.length //to find the length of an array
+
+**3. Accessing aaray element**
+```
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits[0])
+console.log(fruits[1])
+console.log(fruits[2])
+console.log(fruits[fruits,length-1])// to access last elememnt
+```
+**4. Updating Array Elements**
+```
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits)
+fruits[1]="Orange";
+console.log(fruits)
+```
+
+**5. Adding Elements**
+```
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits)
+fruits.push("Orange");//add at the end
+fruits.unshift("Papaya"); //add at the beginning
+console.log(fruits)
+```
+**6. Removing Elements**
+
+```
+let fruits = ["Apple", "Banana", "Mango"];
+console.log(fruits)
+fruits.pop();//remove at the end
+console.log(fruits)
+fruits.shift();//remove from the beginning
+console.log(fruits)
+```
+**7. Looping Through an Array**
+
+```
+let fruits = ["Apple", "Banana", "Mango"];
+
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+for (let fruit of fruits) {
+    console.log(fruit);
+}
+
+Note: Loops video covered in details seperatly in tutorial 4
+```
+
+**forEach()*** executes a function for every element.
+
+```
+let numbers = [10, 20, 30];
+
+numbers.forEach((number) => {
+    console.log(number);
+});
+
+numbers.forEach((number, index) => {
+    console.log(index, number);
+});
+
+```
+**8. Transformation method**
+  * map()
+    ```
+    const nums=[1,2,3,4,5]
+    const doubled=nums.map(num=>num*2)
+    console.log(nums)
+    console.log(doubled)
+    ```
+   * filter()
+    ```
+    const nums=[1,2,3,4,5]
+    const even=filter(num=>num%2==0)
+    console.log(nums)
+    console.log(even)
+    ```
+
+**9. Aggregation methods**
+   * reduce()
+   ```
+   const array = [1, 2, 3, 4];
+
+    // 0 + 1 + 2 + 3 + 4
+    const initialValue = 0;
+    const sumWithInitial = array.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      initialValue,
+    );
+   ``` 
+
+console.log(sumWithInitial);
+// Expected output: 10 
+    
+**Two types of method we have in array**
+ * Static method
+ * Instance method
+
+
+**8. Instance method**
+
+
+
+Leetcode practice problem
+
+https://leetcode.com/problems/remove-element/submissions/1615568138/
+https://leetcode.com/problems/palindrome-number/description/
+https://leetcode.com/problems/two-sum/description/
+https://leetcode.com/problems/valid-parentheses/description/
+https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/1537847446/

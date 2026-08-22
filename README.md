@@ -1238,8 +1238,141 @@ console.log(sumWithInitial);
 
 **8. Instance method**
 
+ * Array.from()
+ * Array.isArray()
+ * Array.of()
 
 
+
+## Object
+
+An object stores data in key-value pairs.
+
+```
+const user = {
+    name: "Rishi",
+    age: 25,
+    city: "Delhi"
+};
+```
+
+
+**1.Creating an Object**
+
+Object Literal
+
+ ```
+ const user = {
+    name: "Rishi",
+    age: 25,
+    city: "Delhi"
+};
+```
+
+Empty object
+
+```
+const user = {};
+```
+
+new Object()
+
+```
+const user = new Object();
+
+user.name = "Rishi";
+```
+
+**2.Accessing Object Properties**
+
+
+Dot notation
+
+```
+const user = {
+    name: "Rishi",
+    age: 25
+};
+
+console.log(user.name);
+console.log(user.age);
+
+```
+
+Bracket notation
+
+```
+console.log(user["name"]);
+console.log(user["age"]);
+```
+
+Adding Properties
+
+```
+const user = {
+    name: "Rishi"
+};
+
+user.age = 25;
+user.city = "Delhi";
+
+console.log(user);
+```
+Updating Properties
+```
+const user = {
+    name: "Rishi",
+    age: 25
+};
+
+user.age = 26;
+
+console.log(user.age);
+```
+
+Deleting Properties
+
+```
+const user = {
+    name: "Rishi",
+    age: 25,
+    city: "Delhi"
+};
+
+delete user.city;
+
+console.log(user);
+```
+
+Objects Can Store Different Data Types
+
+```
+const user = {
+    name: "Rishi",
+    age: 25,
+    isActive: true,
+    salary: 50000,
+    skills: ["JavaScript", "React", "Node.js"],
+    address: {
+        city: "Delhi",
+        country: "India"
+    }
+};
+```
+
+Object with a Function
+
+```
+const user = {
+    name: "Rishi",
+
+    greet: function() {
+        console.log("Hello");
+    }
+};
+
+user.greet();
+```
 Leetcode practice problem
 
 https://leetcode.com/problems/remove-element/submissions/1615568138/

@@ -1373,6 +1373,143 @@ const user = {
 
 user.greet();
 ```
+
+**3.Object Methods & this**
+
+**this in an Object**
+
+```
+const user = {
+    name: "Rishi",
+
+    greet() {
+        console.log(`Hello ${this.name}`);
+    }
+};
+
+user.greet();
+```
+
+**Object.keys()**
+
+```
+const user = {
+  name: "Rishi",
+  age: 25,
+  city: "Delhi"
+};
+
+const keys = Object.keys(user);
+
+console.log(keys);
+```
+
+**Object.values()**
+
+```
+const user = {
+  name: "Rishi",
+  age: 25,
+  city: "Delhi"
+};
+
+const values = Object.values(user);
+
+console.log(values);
+```
+
+***Object.entries()**
+
+```
+const user = {
+  name: "Rishi",
+  age: 25,
+  city: "Delhi"
+};
+
+const entries = Object.entries(user);
+
+console.log(entries);
+
+for (const [key, value] of Object.entries(user)) {
+  console.log(key, value);
+}
+```
+
+```
+
+const user = {
+  name: "Rishi"
+};
+
+const details = {
+  age: 25,
+  city: "Delhi"
+};
+
+const result = Object.assign(user, details);
+
+console.log(result);
+
+//Common use: Creating a copy
+
+const copy = Object.assign({}, user);
+
+console.log(copy);
+
+```
+
+**Object.freeze()**
+
+Prevents an object from being:
+
+modified
+
+adding new properties
+
+deleting properties
+
+```
+const user = {
+  name: "Rishi",
+  age: 25
+};
+
+Object.freeze(user);
+
+user.age = 30;
+user.city = "Delhi";
+delete user.name;
+
+console.log(user);
+
+```
+
+Object.seal()
+
+Prevents:
+
+adding new properties
+
+deleting existing properties
+
+But existing properties can still be modified.
+
+```
+const user = {
+  name: "Rishi",
+  age: 25
+};
+
+Object.seal(user);
+
+user.age = 30;        // Allowed
+user.city = "Delhi";  // Not allowed
+delete user.name;     // Not allowed
+
+console.log(user);
+```
+
 Leetcode practice problem
 
 https://leetcode.com/problems/remove-element/submissions/1615568138/

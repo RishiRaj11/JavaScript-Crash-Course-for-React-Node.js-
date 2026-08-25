@@ -1510,6 +1510,169 @@ delete user.name;     // Not allowed
 console.log(user);
 ```
 
+### Strings in Javascript
+
+What is a String?
+
+A string is a sequence of characters used to represent text in JavaScript.
+
+```
+const name = "Rishi";
+const message = "Hello World";
+
+console.log(name);
+console.log(message);
+
+const firstName = "Rishi";
+const number = "123";
+const symbols = "@#$%";
+const sentence = "JavaScript is awesome!";
+```
+
+Single quotes
+```
+const name = 'Rishi';
+
+console.log(name);
+```
+
+
+Double quotes
+
+```
+const name = "Rishi";
+
+console.log(name);
+```
+
+Template literals
+
+```
+const message = `Hello JavaScript`;
+
+console.log(message);
+```
+
+String interpolation
+
+```
+const name = "Rishi";
+const age = 25;
+
+console.log(`My name is ${name} and I am ${age} years old.`);
+```
+
+
+
+Multi-line strings
+
+```
+const message = `Hello Rishi
+Welcome to JavaScript
+Let's learn strings`;
+
+console.log(message);
+
+const message = "Hello Rishi\nWelcome to JavaScript\nLet's learn strings";
+
+console.log(message);
+```
+
+String length
+```
+const text = "JavaScript";
+
+console.log(text.length);
+```
+
+Accessing characters
+
+```
+const text = "JavaScript";
+
+console.log(text[0]);
+console.log(text[1]);
+console.log(text[2]);
+```
+String indexing
+
+JavaScript uses zero-based indexing.
+
+J  a  v  a  S  c  r  i  p  t
+0  1  2  3  4  5  6  7  8  9
+
+```
+const text = "JavaScript";
+
+console.log(text[0]); // J
+console.log(text[3]); // a
+console.log(text[4]); // S
+console.log(text[9]); // t
+```
+
+at() :The at() method allows you to access a character using its index.
+```
+const text = "JavaScript";
+
+console.log(text.at(0)); // J
+console.log(text.at(4)); // S
+console.log(text.at(9)); // t
+
+
+console.log(text.at(-1)); // t
+console.log(text.at(-2)); // p
+console.log(text.at(-3)); // i
+```
+
+charAt() :charAt() also returns a character at a specific index.
+
+```
+const text = "JavaScript";
+
+console.log(text.charAt(0)); // J
+console.log(text.charAt(4)); // S
+console.log(text.charAt(9)); // t
+```
+
+```
+console.log(text.at(-1));     // t
+console.log(text.charAt(-1)); // ""
+```
+
+Strings are immutable
+```
+let text = "Hello";
+
+text[0] = "Y";
+
+console.log(text);
+```
+
+String concatenation
+
+```
+const firstName = "Rishi";
+const lastName = "Raj";
+
+const fullName = firstName + " " + lastName;
+
+console.log(fullName);
+```
+
+
++ operator :The + operator can perform both addition and string concatenation.
+
+```
+console.log(10 + 20);
+console.log("10" + "20");
+console.log("10" + 20);//1020
+console.log(10 + 20 + "30"); //"3030"
+console.log("10" + 20 + 30); //Once JavaScript encounters the string, the following + operations perform string concatenation.
+```
+
+
+
+
 ## Rest & Spread operator in javascript.
 
 In JavaScript, the rest (...) and spread (...) operators use the same syntax (...), but they serve different purposes depending on where they're used.

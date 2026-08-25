@@ -1560,7 +1560,130 @@ Rest → "Rest = Receive" (collect values).
 Spread → "Spread = Scatter" (expand values).
 
 
+### Destructing in javascript
+
+Destructuring is a JavaScript feature that allows you to extract values from arrays or properties from objects and store them in variables in a clean and readable way.
+
+It was introduced in ES6 (ES2015).
+
+There are two main types:
+
+Array Destructuring
+
+Object Destructuring
+
+```
+const fruits = ["Apple", "Banana", "Mango"];
+
+const first = fruits[0];
+const second = fruits[1];
+
+console.log(first);  // Apple
+console.log(second); // Banana
+
+
+const fruits = ["Apple", "Banana", "Mango"];
+
+const [first, second, third] = fruits;
+
+console.log(first);  // Apple
+console.log(second); // Banana
+console.log(third);  // Mango
+
+
+//Skip Values
+
+//You can skip array elements using commas.
+const numbers = [10, 20, 30, 40];
+
+const [first, , third] = numbers;
+
+console.log(first); // 10
+console.log(third); // 30
 Leetcode practice problem
+
+
+//Rest with Destructuring
+
+const numbers = [10, 20, 30, 40, 50];
+
+const [first, second, ...remaining] = numbers;
+
+console.log(first);     // 10
+console.log(second);    // 20
+console.log(remaining); // [30, 40, 50]
+
+```
+
+**Object Destructuring**
+
+```
+const user = {
+  name: "Rishi",
+  age: 25,
+  city: "Kolkata"
+};
+const name = user.name;
+const age = user.age;
+const city = user.city;
+
+
+const { name, age, city } = user;
+
+console.log(name); // Rishi
+console.log(age);  // 25
+console.log(city); // Kolkata
+
+const user = {
+  name: "Rishi",
+  age: 25
+};
+
+
+//Rename Variables
+const { name: userName, age: userAge } = user;
+
+console.log(userName); // Rishi
+console.log(userAge);  // 25
+
+
+//Rest with Object Destructuring
+
+const user = {
+  name: "Rishi",
+  age: 25,
+  city: "Kolkata",
+  role: "Developer"
+};
+
+const { name, ...details } = user;
+
+console.log(name);
+// Rishi
+
+console.log(details);
+// { age: 25, city: "Kolkata", role: "Developer" }
+
+
+
+Destructuring in Function Parameters
+
+function displayUser(user) {
+  console.log(user.name);
+  console.log(user.age);
+}
+
+function displayUser({ name, age }) {
+  console.log(name);
+  console.log(age);
+}
+
+displayUser({
+  name: "Rishi",
+  age: 25
+});
+
+```
 
 https://leetcode.com/problems/remove-element/submissions/1615568138/
 https://leetcode.com/problems/palindrome-number/description/

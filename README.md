@@ -1510,6 +1510,27 @@ delete user.name;     // Not allowed
 console.log(user);
 ```
 
+## Rest & Spread operator in javascript.
+
+In JavaScript, the rest (...) and spread (...) operators use the same syntax (...), but they serve different purposes depending on where they're used.
+
+***1. Rest Operator (...)***
+
+The rest operator collects multiple elements into a single array or object.
+
+```
+function sum(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+```
+
+***2. Spread Operator (...)***
+
+The spread operator expands arrays, objects, or iterable values into individual elements.
+
+
 Leetcode practice problem
 
 https://leetcode.com/problems/remove-element/submissions/1615568138/

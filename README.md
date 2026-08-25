@@ -1530,6 +1530,35 @@ console.log(sum(1, 2, 3, 4)); // 10
 
 The spread operator expands arrays, objects, or iterable values into individual elements.
 
+```
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1];
+
+console.log(arr2); // [1, 2, 3]
+```
+
+```
+const user = {
+  name: "Alice"
+};
+
+const details = {
+  age: 28,
+  city: "London"
+};
+
+const person = { ...user, ...details };
+
+console.log(person);
+// { name: "Alice", age: 28, city: "London" }
+```
+
+Memory trick:
+
+Rest → "Rest = Receive" (collect values).
+
+Spread → "Spread = Scatter" (expand values).
+
 
 Leetcode practice problem
 

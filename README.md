@@ -1670,6 +1670,327 @@ console.log(10 + 20 + "30"); //"3030"
 console.log("10" + 20 + 30); //Once JavaScript encounters the string, the following + operations perform string concatenation.
 ```
 
+**Strings Methods**
+
+```
+// 1. FINDING & CHECKING
+
+let text = "JavaScript is awesome and JavaScript is powerful";
+
+// indexOf()
+// Returns the first index where the value is found.
+// Returns -1 if the value is not found.
+
+console.log(text.indexOf("JavaScript"));
+// 0
+console.log(text.indexOf("awesome"));
+// 17
+console.log(text.indexOf("Python"));
+// -1
+
+
+// lastIndexOf()
+// Returns the last index where the value is found.
+
+console.log(text.lastIndexOf("JavaScript"));
+// 29
+
+console.log(text.lastIndexOf("is"));
+// 35
+
+// includes()
+// -------------------------
+// Checks whether a string contains a value.
+// Returns true or false.
+
+console.log(text.includes("awesome"));
+// true
+
+console.log(text.includes("Python"));
+// false
+
+
+// -------------------------
+// startsWith()
+// -------------------------
+// Checks whether a string starts with a specific value.
+
+console.log(text.startsWith("JavaScript"));
+// true
+
+console.log(text.startsWith("Python"));
+// false
+
+
+// -------------------------
+// endsWith()
+// -------------------------
+// Checks whether a string ends with a specific value.
+
+console.log(text.endsWith("powerful"));
+// true
+
+console.log(text.endsWith("awesome"));
+// false
+
+
+
+// =====================================================
+// 2. EXTRACTING PARTS OF A STRING
+// =====================================================
+
+let language = "JavaScript";
+
+
+// -------------------------
+// slice()
+// -------------------------
+// Extracts part of a string.
+// Original string is not changed.
+
+console.log(language.slice(0, 4));
+// Java
+
+console.log(language.slice(4));
+// Script
+
+console.log(language.slice(-6));
+// Script
+
+console.log(language.slice(0, -6));
+// Java
+
+
+// -------------------------
+// substring()
+// -------------------------
+// Extracts characters between two indexes.
+// Negative values are treated as 0.
+
+console.log(language.substring(0, 4));
+// Java
+
+console.log(language.substring(4));
+// Script
+
+console.log(language.substring(-4));
+// JavaScript
+
+
+// -------------------------
+// Difference between slice() and substring()
+// -------------------------
+
+let word = "JavaScript";
+
+console.log(word.slice(-6));
+// Script
+
+console.log(word.substring(-6));
+// JavaScript
+
+/*
+Important Difference:
+
+slice()
+- Supports negative indexes
+- Negative index counts from the end
+
+substring()
+- Does NOT support negative indexes
+- Negative values are converted to 0
+*/
+
+
+// Another difference
+
+console.log(word.slice(6, 2));
+// ""
+
+console.log(word.substring(6, 2));
+// "va"
+
+/*
+slice(6, 2)
+=> Start index is greater than end index
+=> Returns empty string
+
+substring(6, 2)
+=> Automatically swaps the indexes
+=> Works like substring(2, 6)
+*/
+
+
+
+// =====================================================
+// 3. CHANGING STRING CASE
+// =====================================================
+
+let name = "Rishi Raj";
+
+
+// -------------------------
+// toUpperCase()
+// -------------------------
+
+console.log(name.toUpperCase());
+// RISHI RAJ
+
+
+// -------------------------
+// toLowerCase()
+// -------------------------
+
+console.log(name.toLowerCase());
+// rishi raj
+
+
+// Original string remains unchanged
+
+console.log(name);
+// Rishi Raj
+
+
+
+// =====================================================
+// 4. REMOVING EXTRA SPACES
+// =====================================================
+
+let userInput = "   Hello JavaScript   ";
+
+
+// -------------------------
+// trim()
+// -------------------------
+// Removes whitespace from both sides.
+
+console.log(userInput.trim());
+// "Hello JavaScript"
+
+
+// -------------------------
+// trimStart()
+// -------------------------
+// Removes whitespace from the beginning.
+
+console.log(userInput.trimStart());
+// "Hello JavaScript   "
+
+
+// -------------------------
+// trimEnd()
+// -------------------------
+// Removes whitespace from the end.
+
+console.log(userInput.trimEnd());
+// "   Hello JavaScript"
+
+
+
+// =====================================================
+// 5. REPLACING CONTENT
+// =====================================================
+
+let message = "I love JavaScript. JavaScript is easy to learn.";
+
+ 
+// -------------------------
+// replace()
+// -------------------------
+// Replaces the first matching value.
+
+console.log(message.replace("JavaScript", "React"));
+// I love React. JavaScript is easy to learn.
+
+
+// -------------------------
+// replaceAll()
+// -------------------------
+// Replaces all matching values.
+
+console.log(message.replaceAll("JavaScript", "React"));
+// I love React. React is easy to learn.
+
+
+// replace() using a regular expression with /g
+
+console.log(message.replace(/JavaScript/g, "React"));
+// I love React. React is easy to learn.
+
+
+
+// =====================================================
+// 6. SPLITTING & JOINING
+// =====================================================
+
+// -------------------------
+// split()
+// -------------------------
+// Converts a String into an Array.
+
+let fruits = "Apple,Banana,Mango,Orange";
+
+let fruitArray = fruits.split(",");
+
+console.log(fruitArray);
+// ["Apple", "Banana", "Mango", "Orange"]
+
+console.log(Array.isArray(fruitArray));
+// true
+
+
+// -------------------------
+// split() with a space
+// -------------------------
+
+let sentence = "JavaScript is easy to learn";
+
+let words = sentence.split(" ");
+
+console.log(words);
+// ["JavaScript", "is", "easy", "to", "learn"]
+
+
+// -------------------------
+// split() without separator
+// -------------------------
+
+let languageName = "JavaScript";
+
+console.log(languageName.split(""));
+// ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+
+
+// -------------------------
+// split() with limit
+// -------------------------
+
+console.log(sentence.split(" ", 3));
+// ["JavaScript", "is", "easy"]
+
+
+
+// =====================================================
+// SPLIT + JOIN
+// =====================================================
+
+// split() converts String -> Array
+// join() converts Array -> String
+
+let technologies = "JavaScript,React,Node.js";
+
+let techArray = technologies.split(",");
+
+console.log(techArray);
+// ["JavaScript", "React", "Node.js"]
+
+let result = techArray.join(" | ");
+
+console.log(result);
+// JavaScript | React | Node.js
+
+
+```
 
 
 

@@ -2169,6 +2169,80 @@ displayUser({
 
 ```
 
+### Map in javascript
+
+A Map is a JavaScript collection that stores data in key-value pairs.
+
+Unlike objects, a Map allows keys of any data type.
+
+
+```
+const users = new Map();
+
+users.set("name", "Rishi");
+users.set("age", 25);
+console.log(users);
+
+
+const user = new Map([
+  ["name", "Rishi"],
+  ["age", 25],
+  ["role", "Developer"]
+]);
+
+```
+
+```
+const user = new Map();
+//add
+user.set("name","Rishi")
+user.set("age",30)
+user.set("role","SDE-1")
+user.set("city","Kolkata")
+
+console.log(user);
+
+console.log(user.size);
+//update
+user.set("role","SDE-2")
+//delete
+user.delete("city","Kolkata")
+//check key
+console.log(user.has("name"))
+
+console.log(user);
+//clear
+user.clear()
+console.log(user)
+```
+
+loops
+
+```
+for (const [key, value] of user) {
+  console.log(key, value);
+}
+
+for (const key of user.keys()) {
+  console.log(key);
+}
+
+for (const key of user.keys()) {
+  console.log(key);
+}
+
+for (const value of user.values()) {
+  console.log(value);
+}
+for (const [key, value] of user.entries()) {
+  console.log(`${key}: ${value}`);
+}
+
+user.forEach((value, key) => {
+  console.log(key, value);
+});
+
+```
 1. https://leetcode.com/problems/remove-element/submissions/1615568138/
 2. https://leetcode.com/problems/valid-palindrome/description/
 3. https://leetcode.com/problems/palindrome-number/description/

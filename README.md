@@ -2259,6 +2259,80 @@ for (const fruit of fruits) {
 }
 
 ```
+
+
+### Set in javascript 
+
+A Set is a JavaScript collection that stores unique values.
+
+Unlike an Array, a Set does not allow duplicate values.
+
+```
+const numbers = new Set();
+
+numbers.add(10);
+numbers.add(20);
+numbers.add(10);
+console.log(numbers);
+
+const numbers = new Set([1, 2, 3, 4]);
+
+console.log(numbers);
+```
+
+```
+const fruits = new Set();
+
+fruits.add("Apple");
+
+//add
+fruits.add("Banana");
+fruits.add("Orange");
+//size
+console.log(fruits.size);
+
+//check
+console.log(fruits.has("Apple"));
+//Delete
+fruits.delete("Banana");
+//delete all
+fruits.clear();
+
+console.log(fruits);
+```
+
+Loops
+
+```
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+for (const value of numbers.values()) {
+  console.log(value);
+}
+for (const value of numbers.keys()) {
+  console.log(value);
+}
+
+for (const entry of numbers.entries()) {
+  console.log(entry);
+}
+fruits.forEach((value) => {
+  console.log(value);
+});
+```
+
+```
+const numbers = [
+  1, 2, 2, 3, 3, 4, 4, 5
+];
+
+const uniqueNumbers = [...new Set(numbers)];
+
+console.log(uniqueNumbers);
+```
+
+
 1. https://leetcode.com/problems/remove-element/submissions/1615568138/
 2. https://leetcode.com/problems/valid-palindrome/description/
 3. https://leetcode.com/problems/palindrome-number/description/

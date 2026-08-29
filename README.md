@@ -2243,6 +2243,22 @@ user.forEach((value, key) => {
 });
 
 ```
+
+
+```
+const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+
+const count = new Map();
+
+for (const fruit of fruits) {
+    if(count.has(fruit)){
+        count.set(fruit, count.get(fruit) + 1);
+    }else{
+         count.set(fruit, 1);
+    }
+}
+
+```
 1. https://leetcode.com/problems/remove-element/submissions/1615568138/
 2. https://leetcode.com/problems/valid-palindrome/description/
 3. https://leetcode.com/problems/palindrome-number/description/

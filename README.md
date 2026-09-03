@@ -2333,14 +2333,18 @@ console.log(uniqueNumbers);
 ```
 
 
-1. https://leetcode.com/problems/remove-element/submissions/1615568138/
-2. https://leetcode.com/problems/valid-palindrome/description/
-3. https://leetcode.com/problems/palindrome-number/description/
-4. https://leetcode.com/problems/longest-palindromic-substring/description/
-5. https://leetcode.com/problems/two-sum/description/
-6. https://leetcode.com/problems/valid-parentheses/description/
-7. https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/1537847446/
-8. https://leetcode.com/problems/longest-common-prefix/description/
-9. https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
-10. https://leetcode.com/problems/length-of-last-word/submissions/1493057333/
+1. https://www.geeksforgeeks.org/problems/search-an-element-in-an-array-1587115621/1
+2. https://leetcode.com/problems/remove-element/submissions/1615568138/
+3. https://leetcode.com/problems/reverse-integer/description/
+4. https://www.geeksforgeeks.org/problems/second-largest3735/1
+5. https://leetcode.com/problems/valid-palindrome/description/
+6. https://leetcode.com/problems/reverse-integer/description/
+7. https://leetcode.com/problems/palindrome-number/description/
+8. https://leetcode.com/problems/longest-palindromic-substring/description/
+9. https://leetcode.com/problems/two-sum/description/
+10. https://leetcode.com/problems/valid-parentheses/description/
+11. https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/1537847446/
+12. https://leetcode.com/problems/longest-common-prefix/description/
+13. https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
+14. https://leetcode.com/problems/length-of-last-word/submissions/1493057333/
 

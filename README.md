@@ -270,15 +270,39 @@ const name = "Raj"; // ❌ SyntaxError
 * const  → declaration allowed, reassignment NOT allowed
 * var    → declaration + reassignment allowed
 
-5. Scope(This will discuss after completion)
+**5. Scope**
 Scope determines where a variable can be accessed in your code.
 
+Lets take one example
+
+```
+let outerVariable = "Hello";
+
+function test() {
+    let innerVariable = "Inside Function";
+
+    console.log(outerVariable);
+    console.log(innerVariable);
+}
+
+test();
+
+console.log(outerVariable);
+
+// console.log(localVariable); // Error
+
+```
 JavaScript has several important types of scope:
+
+let understand first block ?
+
+Types
+
 * Global Scope
 * Function Scope
 * Block Scope
 
-** Global Scope **
+**Global Scope**
 
 A variable declared outside functions/blocks is generally in the global scope.
 ```
@@ -290,9 +314,9 @@ function greet() {
 
 greet();
 ```
-** Note: ** The function can access the variable because name is available from the outer/global scope.
+**Note:** The function can access the variable because name is available from the outer/global scope.
 
-** Function Scope **
+**Function Scope**
 
 Variables declared with var inside a function are available throughout that function.
 ```
@@ -305,13 +329,42 @@ function test() {
 test();
 
 console.log(message); // ❌ ReferenceError
+
+
+function greet() {
+    let message = "Hello World";
+
+    console.log(message);
+}
+
+greet();
+
+// console.log(message); // ReferenceError
 ```
 
-** Block Scope **
+**Block Scope**
 
 let and const are block-scoped.
 
 A block is usually represented by { }.
+
+
+
+Commonly used blocks
+
+if () {
+}
+
+for () {
+}
+
+while () {
+}
+
+{
+}
+
+
 ```
 if (true) {
   let message = "Hello";
@@ -331,7 +384,32 @@ if (true) {
 
 console.log(x); // 10
 ```
-** Note: ** The variables only exist inside the if block if it is declare with let but if it is declare with var it is accessible outside also.
+```
+for (var i = 0; i < 3; i++) {
+    console.log(i);
+}
+
+console.log(i);
+
+for (let i = 0; i < 3; i++) {
+    console.log(i);
+}
+
+// console.log(i); // Error
+```
+
+
+**Note:** The variables only exist inside the if block if it is declare with let but if it is declare with var it is accessible outside also.
+
+
+```
+var   → Function Scoped
+
+let   → Block Scoped
+
+const → Block Scoped
+
+```
 ```
 Declaration    → Create
 Reassignment   → Change value

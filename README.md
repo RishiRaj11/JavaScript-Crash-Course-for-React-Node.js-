@@ -2427,3 +2427,109 @@ console.log(uniqueNumbers);
 14. https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
 15. https://leetcode.com/problems/length-of-last-word/submissions/1493057333/
 
+### Scope Chain & Lexical Scope ###
+
+The scope chain is a mechanism in JavaScript that determines the order in which variables and functions are looked up during execution.
+
+JavaScript looks:
+
+Inner Scope
+    ↓
+Outer Scope
+    ↓
+Global Scope
+
+```
+const globalVariable = "Global";
+
+function outerFunction() {
+
+    const outerVariable = "Outer";
+
+    function innerFunction() {
+
+        const innerVariable = "Inner";
+
+        console.log(innerVariable);
+        console.log(outerVariable);
+        console.log(globalVariable);
+    }
+
+    innerFunction();
+}
+
+outerFunction();
+
+```
+***What Is Lexical Scope in JavaScript?***
+
+const globalVariable = "Global";
+
+```
+function outer() {
+
+    let name = "Rishi";
+
+    function inner() {
+        console.log(name);
+    }
+
+    inner();
+}
+
+outer();
+
+The inner() function can access variables from its parent scope.
+```
+
+Child → Parent Access ✅
+
+Parent → Child Access ❌
+
+
+
+## Advanced Javascript
+
+### Synchronous and Asynchronous in JavaScript 
+
+JavaScript is a single threaded programming language used for web development. It supports synchronous and asynchronous execution. In synchronous execution, statements run one after another, and each task waits for the previous one to finish. In asynchronous execution, some tasks run in the background without stopping the execution of other code.
+
+***Synchronous***
+
+Synchronous JavaScript executes code sequentially, where the current operation generally needs to complete before the next operation executes.
+
+* Tasks run one after another in a fixed order.
+* Time-consuming operations can block the execution of other code until they finish.
+
+```
+console.log("Hi");
+console.log("Geek");
+console.log("How are you?");
+```
+```
+
+blocking code
+
+console.log("Start");
+for(let i=0;i<10000;i++){
+  console.log(i)
+}
+
+console.log("End");
+```
+
+***Asynchronous***
+
+Asynchronous JavaScript allows certain operations to be initiated without blocking the execution of subsequent JavaScript code
+
+```
+console.log("Hi");
+
+setTimeout(() => {
+    console.log("Geek");
+}, 2000);
+
+console.log("End");
+```
+
+

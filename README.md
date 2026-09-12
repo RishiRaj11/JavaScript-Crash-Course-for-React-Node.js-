@@ -2533,3 +2533,32 @@ console.log("End");
 ```
 
 
+***Callbacks in JavaScript***
+
+A callback is a function that is passed as an argument to another function and is called by that function.
+
+```
+function greet() {
+    console.log("Hello");
+}
+
+function executeFunction(callback) {
+    callback();
+}
+
+executeFunction(greet);
+```
+
+```
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Hello");
+}, 2000);
+
+console.log("End");
+```
+
+* Callback hell:
+
+  

@@ -2487,6 +2487,45 @@ Child → Parent Access ✅
 Parent → Child Access ❌
 
 
+## Closure in Javascript
+
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives a function access to its outer scope. In JavaScript, closures are created every time a function is created, at function creation time.
+
+
+Closure allows a function to remember and access variables from its outer scope even after the outer function has finished executing.
+
+```
+function outer(){
+    let count=0;
+    function inner(){
+        count++;
+        console.log(count)
+    }
+    inner();
+}
+outer()
+```
+
+```
+function createBankAccount(initialBalance){
+    let balance=initialBalance;
+
+    return {
+        deposit:function(amount){
+            balance +=amount;
+        },
+        getBalance:function(){
+            return balance;
+        }
+
+    }
+}
+const account=createBankAccount(1000);
+account.deposit(500)
+console.log(account.getBalance())
+
+```
+
 
 ## Advanced Javascript
 

@@ -2660,5 +2660,37 @@ function loginUser(callback) {
 
 ### Promises 
 
+* Why do we need Promises?
+* Start with the Callback Hell example from your previous tutorial:
+
+
+```
+const promise = new Promise((resolve, reject) => {
+  // async operation
+  setTimeout(() => {
+    const success = true;
+
+    if (success) {
+      resolve("Operation successful");
+    } else {
+      reject("Something went wrong");
+    }
+  },2000);
+});
+console.log(promise);
+
+try and se the output then explain defnition
+```
+
 The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+Pending
+  ↓
+ ┌──────────────┐
+ │              │
+ ↓              ↓
+Fulfilled     Rejected
+(Success)     (Failure)
+
+
 

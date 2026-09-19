@@ -2683,7 +2683,7 @@ try and se the output then explain defnition
 ```
 
 The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
-
+```
 Pending
   ↓
  ┌──────────────┐
@@ -2691,6 +2691,239 @@ Pending
  ↓              ↓
 Fulfilled     Rejected
 (Success)     (Failure)
+```
+## Promises API
+
+```
+Promise APIs
+│
+├── Promise.all()
+├── Promise.allSettled()
+├── Promise.race()
+├── Promise.any()
+├── Promise.resolve()
+└── Promise.reject()
+```
 
 
+## Async/Await in JavaScript
 
+Async/Await is a cleaner and easier way to work with Promises.
+
+Why Async/Await?
+
+```
+loginUser()
+    .then(user => getProfile(user.id))
+    .then(profile => getPosts(profile.userId))
+    .then(posts => {
+        console.log(posts);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+what if kuchh aisa ho jo cleaner ho
+
+async function getUserData() {
+
+    const user = await loginUser();
+
+    const profile = await getProfile(user.id);
+
+    const posts = await getPosts(profile.userId);
+
+    console.log(posts);
+}
+
+```
+
+What is async?
+
+```
+async function hello() {
+    return "Hello";
+}
+
+const result = hello();
+
+console.log(result);
+
+
+hello()
+    .then(result => {
+        console.log(result);
+    });
+```
+
+What is await?
+
+await is used to wait for a Promise to settle
+
+await pauses the execution of the current async function until the Promise settles. It does not block the entire JavaScript thread.
+
+
+```
+async function getResult() {
+
+    const result = await hello();
+
+    console.log(result);
+
+}
+
+getResult();
+```
+
+Async/Await is built on Promises
+
+take example of Your Login → Profile → Posts Example
+
+
+```
+function loginUser() {
+
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+
+            resolve({
+                id: 1,
+                name: "Rishi"
+            });
+
+        }, 1000);
+
+    });
+
+}
+
+function getProfile(userId) {
+
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+
+            resolve({
+                userId,
+                email: "rishi@example.com"
+            });
+
+        }, 1000);
+
+    });
+
+}
+
+function getPosts(userId) {
+
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+
+            resolve([
+                "Post 1",
+                "Post 2"
+            ]);
+
+        }, 1000);
+
+    });
+
+}
+
+async function getUserData() {
+
+    const user = await loginUser();
+
+    console.log("User:", user);
+
+    const profile = await getProfile(user.id);
+
+    console.log("Profile:", profile);
+
+    const posts = await getPosts(user.id);
+
+    console.log("Posts:", posts);
+
+}
+
+getUserData();
+
+```
+
+Error Handling with try...catch
+
+```
+async function getUserData() {
+
+    try {
+
+        const user = await loginUser();
+
+        const profile = await getProfile(user.id);
+
+        const posts = await getPosts(profile.userId);
+
+        console.log(posts);
+
+    } catch (error) {
+
+        console.log("Error:", error);
+
+    }
+
+}
+
+```
+
+Async/Await with API Call
+
+```
+async function getUsers() {
+
+    try {
+
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/users"
+        );
+
+        const users = await response.json();
+
+        console.log(users);
+
+    } catch (error) {
+
+        console.log("Error:", error);
+
+    }
+
+}
+
+getUsers();
+
+```
+
+Important: await doesn't block JavaScript`
+
+```
+
+async function test() {
+
+    console.log("Inside Start");
+
+    await new Promise(resolve => {
+        setTimeout(resolve, 2000);
+    });
+
+    console.log("Inside End");
+
+}
+
+console.log("Before");
+
+test();
+
+console.log("After");
+
+```

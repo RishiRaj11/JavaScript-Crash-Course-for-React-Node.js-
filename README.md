@@ -2692,18 +2692,6 @@ Pending
 Fulfilled     Rejected
 (Success)     (Failure)
 ```
-## Promises API
-
-```
-Promise APIs
-│
-├── Promise.all()
-├── Promise.allSettled()
-├── Promise.race()
-├── Promise.any()
-├── Promise.resolve()
-└── Promise.reject()
-```
 
 
 ## Async/Await in JavaScript
@@ -2925,5 +2913,111 @@ console.log("Before");
 test();
 
 console.log("After");
+
+```
+
+
+## Promises API
+
+```
+Promise APIs
+│
+├── Promise.all()
+├── Promise.allSettled()
+├── Promise.race()
+├── Promise.any()
+├── Promise.resolve()
+└── Promise.reject()
+```
+
+Promise.all()
+
+They run concurrently rather than waiting for each other sequentially.
+
+```
+const promise1 = new Promise(resolve => {
+    setTimeout(() => {
+        resolve("User data");
+    }, 2000);
+});
+
+const promise2 = new Promise(resolve => {
+    setTimeout(() => {
+        resolve("Product data");
+    }, 1000);
+});
+
+const promise3 = new Promise(resolve => {
+    setTimeout(() => {
+        resolve("Order data");
+    }, 1500);
+});
+
+Promise.all([promise1, promise2, promise3])
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+```
+
+Promise.all() maintains order
+
+promise2 → finishes first
+promise3 → finishes second
+promise1 → finishes last
+
+Promise.all() rejects if any one Promise rejects.
+
+Promise.all() failure
+
+take one rejected case in above example
+
+
+Promise.allSettled()
+
+
+What if I want the result of every Promise, even when some fail?
+
+```
+
+Promise.allSettled([promise1, promise2, promise3])
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.log("Error:", error);
+    });
+```
+
+Promise.race()
+
+What if I only care about whichever Promise finishes first?
+
+settles based on the first Promise to settle, whether that is fulfilled or rejected.
+
+
+Promise.any()
+
+What if I want the first Promise that successfully resolves?
+
+
+
+Promise.resolve() & Promise.reject()
+
+
+
+```
+Promise.resolve("Hello")
+    .then(value => {
+        console.log(value);
+    });
+
+
+Promise.reject("Something went wrong")
+    .catch(error => {
+        console.log(error);
+    });
 
 ```
